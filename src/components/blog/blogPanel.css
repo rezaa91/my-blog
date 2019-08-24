@@ -1,0 +1,45 @@
+
+@import "../../utils/colours.css";
+
+.blog-panel {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  margin: 15px 50px;
+}
+
+.blog-panel:first-child, .blog-panel:nth-child(5n) {
+  margin-left: 0;
+}
+
+.blog-panel:nth-child(4n) {
+  margin-right: 0;
+}
+
+.blog-title {
+  color: var(--tiffany);
+}
+
+.blog-summary {
+  color: var(--grey);
+}
+
+.blog-footer {
+  display: flex;
+}
+
+.meta-data p{
+  margin-bottom: 0;
+}
+
+.small {
+  font-size: 14px;
+  color: var(--black);
+}
+
+.author {
+  color: var(--babyBlue);
+  font-weight: 600;
+}

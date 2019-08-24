@@ -1,0 +1,22 @@
+@import "../utils/colours.css";
+
+.blog-post-container {
+  padding: 100px 20px 20px;
+  width: 40%;
+  margin: auto;
+}
+
+.blog-post-title {
+  color: var(--tiffany);
+  font-weight: 100;
+}
+
+.blog-post-meta-data {
+  color: var(--grey);
+  font-size: 14px;
+}
+
+.blog-post-author {
+  font-weight: 600;
+  margin-bottom: 0;
+}

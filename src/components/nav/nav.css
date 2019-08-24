@@ -1,0 +1,100 @@
+@import "../../utils/colours.css";
+
+.nav-container {
+  position: fixed;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 5px;
+  transition: background 0.4s;
+  z-index: 2;
+}
+
+.nav-scrolling {
+  background: var(--primaryBlue);
+  color: var(--white);
+}
+
+.nav-scrolling .nav-title-link {
+  color: var(--white);
+}
+
+.nav-scrolling .link {
+  color: var(--darkGrey);
+}
+
+.nav-scrolling .link:hover {
+  color: var(--white);
+}
+
+.nav-scrolling .login-link:hover {
+  color: var(--darkGrey);
+}
+
+.nav-title {
+  margin-right: 40px;
+}
+
+.nav-title-link {
+  text-decoration: none;
+  color: var(--primaryBlue);
+  transition: color 0.2s;
+}
+
+.nav-title-link:hover {
+  color: var(--babyBlue);
+}
+
+.nav-right {
+  position: absolute;
+  right: 5px; /* same as padding in .nav-container */
+}
+
+.link {
+  text-decoration: none;
+  padding: 2px 5px;
+  margin: 0 10px;
+  color: var(--grey);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--darkGrey);
+}
+
+.login-link {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.login-link:hover {
+  color: var(--primaryBlue);
+}
+
+.close-modal-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.close-modal {
+  cursor: pointer;
+  transition: font-weight 0.2s;
+}
+
+.close-modal:hover {
+  font-weight: 600;
+}
+
+.modal {
+  position: relative;
+  top: 40%;
+  width: 40%;
+  margin: auto;
+  background-color: var(--tiffany);
+  outline: none;
+  padding: 10px 20px;
+  outline: var(--grey);
+  box-shadow: 3px 5px 3px var(--grey);
+}

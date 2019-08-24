@@ -1,18 +1,15 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Nav from "./nav/nav";
+import LoginForm from "./form/loginForm";
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const [loginIsOpen, openLogin] = React.useState(false);
+  const [scroll, hasScrolled] = React.useState(false);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,22 +20,48 @@ const Layout = ({ children }) => {
     }
   `)
 
+  useEffect(() => {
+    function checkIfScrolled() {
+      if (window.scrollY > 150) {
+        hasScrolled(true);
+      } else {
+        hasScrolled(false);
+      }
+    }
+
+    document.addEventListener('scroll', checkIfScrolled)
+
+    // clean up
+    return () => document.removeEventListener('scroll', checkIfScrolled);
+  })
+
+  const openLoginModal = () => {
+    openLogin(true);
+  }
+
+  const closeLoginModal = () => {
+    openLogin(false);
+  }
+
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <Nav siteTitle={data.site.siteMetadata.title} openLoginModal={openLoginModal} hasScrolled={scroll} />
+      <LoginForm loginIsOpen={loginIsOpen} closeModal={closeLoginModal} />
+      <div>
+        <main
+          style={{
+            padding: "0 10px"
+          }}
+        >
+          {children}
+        </main>
+        <footer
+          style={{
+            textAlign: "center",
+            padding: "10px 0",
+          }}
+        >
+          © {new Date().getFullYear()} {data.site.siteMetadata.title}. All rights reserved.
         </footer>
       </div>
     </>

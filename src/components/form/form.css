@@ -1,0 +1,17 @@
+@import "../../utils/colours.css";
+
+.form-title {
+  letter-spacing: 1.5px;
+  color: var(--white);
+}
+
+input[type="text"], input[type="password"] {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 22px;
+  border-radius: 4px;
+}
+
+.newsletter-confirm-container {
+  margin-bottom: 25px;
+}
