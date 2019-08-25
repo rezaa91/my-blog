@@ -16,7 +16,7 @@ const BlogPost = ({ data }) => {
           <p>{post.frontmatter.date}</p>
         </div>
         <Img className="blog-post-image" fluid={post.frontmatter.image.childImageSharp.fluid} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
+        <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </section>
     </Layout>
   );

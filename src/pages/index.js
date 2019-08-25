@@ -7,40 +7,50 @@ import SEO from "../components/seo";
 import Button from "../components/button/button";
 import RegisterForm from "../components/form/registerForm";
 import Panel from "../components/panel/panel";
-import { tiffany } from "../utils/colours";
+import { grey, tiffany } from "../utils/colours";
+import code from "../images/code.jpeg"
 
 const featuredCourses = [
   {
-    title: "Course 1",
-    image: "",
+    title: "HTML & CSS: A Beginners Guide",
+    image: code,
+    path: "",
   },
   {
-    title: "Course 2",
+    title: "JavaScript: The Basics",
     image: "",
+    path: "",
   },
   {
-    title: "Course 3",
+    title: "MySQL: A Complete Guide",
     image: "",
+    path: "",
   },
   {
-    title: "Course 4",
+    title: "PHP: The Basics",
     image: "",
+    path: "",
   },
   {
-    title: "Course 5",
+    title: "React: A Complete Guide",
     image: "",
+    path: "",
   },
   {
-    title: "Course 6",
+    title: "Algorithms in JavaScript",
     image: "",
+    path: "",
   }
 ]
 
 const IndexPage = () => {
   const renderFeaturedCourses = () => (
     map(featuredCourses, (course, index) => (
-      <Panel key={index} classNames="featured-course row-3">
-        <h4>{course.title}</h4>
+      <Panel
+        key={index}
+        background={`url(${course.image})`}
+        classNames="featured-course row-3"
+      >
       </Panel>
     ))
   )
@@ -71,17 +81,17 @@ const IndexPage = () => {
               justifyContent: 'center',
             }}
           >
-            <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link>
+            {/* <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link> */}
             <Link to="/blog/"><Button primary={true} className="big">Blog</Button></Link>
           </div>
         </div>
       </header>
 
-      <section
+      {/* <section
         style={{
           display: "flex",
           width: "100%",
-          padding: "10px 20px",
+          padding: "40px 20px",
         }}
       >
         <div
@@ -89,36 +99,43 @@ const IndexPage = () => {
             flex: 1,
           }}
         >
-          <h3>get access to free content when you register</h3>
+          <h2>get access to free content when you register</h2>
           <div style={{
             display: "flex",
-          }}>
+          }}> */}
             {/* display 3 images here */}
-          </div>
+          {/* </div>
         </div>
         <RegisterForm />
+      </section> */}
+
+      <section
+        style={{
+          padding: "40px 20px",
+          background: grey,
+        }}
+      >
+        <div
+          style={{
+            width: "40%",
+            margin: "auto",
+          }}
+        >
+          <p className="sub-header">self taught web developer.</p>
+          <p className="big-text">I create blogs and courses tailored around web develpoment. Predominantly using JavaScript and PHP.</p>
+          <p>
+            <span>Follow me:</span>
+            {/* Social media links - insta, YT, twitter */}
+          </p>
+        </div>
       </section>
 
       <section
         style={{
-          padding: "10px 20px"
+          padding: "40px 20px",
         }}
       >
-        <h3>who are we?</h3>
-        <p>
-        lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis efficitur dictum.
-        lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis efficitur dictum.
-        lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis efficitur dictum.
-        lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec convallis efficitur dictum.
-        </p>
-      </section>
-
-      <section
-        style={{
-          padding: "10px 20px",
-        }}
-      >
-        <h3>featured courses</h3>
+        <h2>featured courses</h2>
         <div
           style={{
             display: "flex",
