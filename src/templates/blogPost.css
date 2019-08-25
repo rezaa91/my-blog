@@ -2,7 +2,7 @@
 
 .blog-post-container {
   padding: 100px 20px 20px;
-  width: 50%;
+  width: 40%;
   margin: auto;
 }
 
@@ -15,4 +15,22 @@
 .blog-post-meta-data {
   color: var(--grey);
   font-size: 14px;
+}
+
+.blog-post-content p {
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.75px;
+  line-height: 2rem;
+  color: var(--darkGrey);
+}
+
+.blog-post-content h3 {
+  font-weight: 600;
+  margin-top: 75px;
+  color: var(--primaryBlue);
+}
+
+.blog-post-content p:first-child {
+  margin-top: 50px;
 }
