@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
 
 import "./blogPost.css";
 import Layout from "../components/layout";
@@ -12,9 +13,9 @@ const BlogPost = ({ data }) => {
       <section className="blog-post-container">
         <h1 className="blog-post-title">{post.frontmatter.title}</h1>
         <div className="blog-post-meta-data">
-          <p className="blog-post-author">{post.frontmatter.author}</p>
           <p>{post.frontmatter.date}</p>
         </div>
+        <Img className="blog-post-image" fluid={post.frontmatter.image.childImageSharp.fluid} />
         <div dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </section>
     </Layout>
@@ -28,8 +29,14 @@ query BlogPostByPath($path: String!) {
     frontmatter {
       path
       title
-      author
       date
+      image {
+        childImageSharp {
+          fluid(maxWidth: 600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   }
 }

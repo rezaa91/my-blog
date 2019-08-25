@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
         <footer
           style={{
             textAlign: "center",
-            padding: "10px 0",
+            padding: "20px 0",
           }}
         >
           © {new Date().getFullYear()} {data.site.siteMetadata.title}. All rights reserved.

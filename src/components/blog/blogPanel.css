@@ -3,11 +3,16 @@
 
 .blog-panel {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   width: 25%;
   margin: 15px 50px;
+  transition: box-shadow 0.2s;
+  background-color: var(--white);
+}
+
+.blog-info {
+  padding-top: 5px;
 }
 
 .blog-panel:first-child, .blog-panel:nth-child(5n) {
@@ -20,10 +25,17 @@
 
 .blog-title {
   color: var(--tiffany);
+  font-weight: 100;
+  margin-bottom: 1rem;
+}
+
+.blog-title:hover {
+  text-decoration: underline;
 }
 
 .blog-summary {
   color: var(--grey);
+  margin-bottom: 0.5rem;
 }
 
 .blog-footer {
@@ -37,9 +49,4 @@
 .small {
   font-size: 14px;
   color: var(--black);
-}
-
-.author {
-  color: var(--babyBlue);
-  font-weight: 600;
 }

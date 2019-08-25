@@ -1,7 +1,7 @@
 ---
 path: "/post-one"
 date: "Sep 19"
-title: "My first blog"
-author: "Ali Issaee"
-summary: ""
+title: "My story"
+summary: "Read about how I became a developer"
+image: "../../images/code.jpeg"
 ---

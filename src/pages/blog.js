@@ -17,8 +17,14 @@ const Blog = () => {
               path,
               title,
               date,
-              author,
-              summary
+              summary,
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 600) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
             }
           }
         }
@@ -30,8 +36,8 @@ const Blog = () => {
     map(data.allMarkdownRemark.edges, (post, index) => (
       <BlogPanel
         key={index}
+        fluid={post.node.frontmatter.image.childImageSharp.fluid}
         title={post.node.frontmatter.title}
-        author={post.node.frontmatter.author}
         summary={post.node.frontmatter.summary}
         date={post.node.frontmatter.date}
         path={post.node.frontmatter.path}

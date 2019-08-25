@@ -1,32 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import Img from "gatsby-image";
 
 import "./blogPanel.css";
 
-const BlogPanel = ({ title, summary, author, date, path }) => {
+const BlogPanel = ({ title, summary, date, path, fluid }) => {
   return (
-    <Link className="blog-panel" to={path}>
-      <h3 className="blog-title">{title}</h3>
-      <p className="blog-summary">{summary}</p>
+    <div className="blog-panel">
+      <Link to={path}>
+        <Img fluid={fluid} />
+      </Link>
 
-      <div className="blog-footer">
-        <div>
-          {/* image here */}
-        </div>
-        <div className="meta-data">
-          <p className="small author">{author}</p>
-          <p className="small">{date}</p>
+      <div className="blog-info">
+        <Link to={path}><h2 className="blog-title">{title}</h2></Link>
+        <p className="blog-summary">{summary}</p>
+
+        <div className="blog-footer">
+          <div className="meta-data">
+            <p className="small">{date}</p>
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 
 BlogPanel.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   path: PropTypes.string.isRequired,
 }
