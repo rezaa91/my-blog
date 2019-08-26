@@ -1,5 +1,5 @@
 ---
-path: "/use git the smart way by following these simple steps"
+path: "/blog/use-git-the-smart-way-by-following-these-simple-steps"
 date: "Aug 19"
 title: "Use git the smart way by following these simple steps"
 summary: "If you are a developer, the chances are you have come across git at some point on your journey. Most likely it is a common tool which you use often, but are you using it wisely? Follow these steps to be more proficient with git."

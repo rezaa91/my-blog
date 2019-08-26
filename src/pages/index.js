@@ -12,34 +12,9 @@ import code from "../images/code.jpeg"
 
 const featuredCourses = [
   {
-    title: "HTML & CSS: A Beginners Guide",
+    title: "HTML & CSS: The Complete Guide",
     image: code,
-    path: "",
-  },
-  {
-    title: "JavaScript: The Basics",
-    image: "",
-    path: "",
-  },
-  {
-    title: "MySQL: A Complete Guide",
-    image: "",
-    path: "",
-  },
-  {
-    title: "PHP: The Basics",
-    image: "",
-    path: "",
-  },
-  {
-    title: "React: A Complete Guide",
-    image: "",
-    path: "",
-  },
-  {
-    title: "Algorithms in JavaScript",
-    image: "",
-    path: "",
+    path: "/courses/html-and-css-the-complete-guide",
   }
 ]
 
@@ -51,6 +26,11 @@ const IndexPage = () => {
         background={`url(${course.image})`}
         classNames="featured-course row-3"
       >
+        <Link
+          style={{
+            width: "100%", height: "100%",
+          }}
+          to={course.path} />
       </Panel>
     ))
   )
@@ -81,7 +61,7 @@ const IndexPage = () => {
               justifyContent: 'center',
             }}
           >
-            {/* <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link> */}
+            <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link>
             <Link to="/blog/"><Button primary={true} className="big">Blog</Button></Link>
           </div>
         </div>
