@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { map } from "lodash";
 
@@ -49,7 +49,6 @@ const Courses = () => {
           padding: "100px 20px 20px",
           display: "flex",
           flexWrap: "wrap",
-          // justifyContent: "space-between"
         }}
       >
         {renderTutorials()}
