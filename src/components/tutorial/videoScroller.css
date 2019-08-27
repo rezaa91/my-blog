@@ -1,0 +1,13 @@
+@import "../../utils/colours.css";
+
+.video-scroller-list {
+  margin-left: 20px;
+  overflow-y: scroll;
+  max-height: 100%;
+}
+
+.video-scroller-list-item {
+  cursor: pointer;
+  font-family: sans-serif;
+  padding: 5px;
+}

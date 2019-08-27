@@ -25,7 +25,7 @@ Panel.defaultProps = {
 }
 
 Panel.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   width: PropTypes.string,
   background: PropTypes.string,
   classNames: PropTypes.string

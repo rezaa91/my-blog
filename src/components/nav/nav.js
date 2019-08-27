@@ -15,7 +15,7 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled }) => {
 
       <div>
         <Link to="/blog/" className="link">blog</Link>
-        {/* <Link to="/courses/" className="link">courses</Link> */}
+        <Link to="/courses/" className="link">courses</Link>
       </div>
 
       <div className="nav-right">

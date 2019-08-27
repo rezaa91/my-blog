@@ -1,0 +1,34 @@
+@import "../utils/colours.css";
+
+.tutorial-container {
+  padding: 100px 20px 20px;
+  display: flex;
+}
+
+.tutorial-left-container {
+  flex: 3;
+}
+
+.tutorial-right-container {
+  flex: 2;
+  height: 740px; /* 720px height of video, plus 2x10px of video container */
+}
+
+.video-main-title {
+  color: var(--tiffany);
+}
+
+.video-player-container {
+  background: var(--black);
+  padding: 10px 0;
+  border-radius: 10px;
+}
+
+.video-title {
+  margin-top: 15px;
+  color: var(--primaryBlue);
+}
+
+.video-description {
+  color: var(--grey);
+}
