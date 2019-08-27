@@ -1,0 +1,48 @@
+@import "../../utils/colours.css";
+
+.tutorial-panel-container {
+  box-shadow: 3px 3px 10px var(--grey);
+  width: 30%;
+  margin: 10px 1.33%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s
+}
+
+.tutorial-panel-container:first-child {
+  margin-left: 0;
+}
+
+.tutorial-panel-container:nth-child(4n) {
+  margin-left: 0;
+}
+
+.tutorial-panel-container:nth-child(3n) {
+  margin-right: 0;
+}
+
+.tutorial-panel-container:hover {
+  box-shadow: 5px 6px 12px var(--darkGrey);
+  transform: scale(1.05);
+}
+
+.tutorial-panel-image {
+  overflow: hidden;
+}
+
+.tutorial-panel-meta-data {
+  padding: 10px;
+  color: var(--black);
+}
+
+.tutorial-panel-meta-data h3 {
+  color: var(--primaryBlue);
+  margin-bottom: 5px;
+}
+
+.tutorial-panel-meta-data p {
+  color: var(--darkGrey);
+}

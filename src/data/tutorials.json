@@ -1,0 +1,94 @@
+[
+  {
+    "title": "HTML & CSS: The Complete Guide",
+    "link": "/courses/html-and-css-the-complete-guide",
+    "description": "Build the foundations needed to become a web developer. In this course we will go through HTML and CSS from start to finish",
+    "image": "./tutorial-images/code.jpeg",
+    "videos": [
+      {
+        "title": "Getting Started",
+        "yt_link": "https://youtube.com/embed/5sUIdLyklv0",
+        "description": "In this video we learn what HTML and CSS is and we discuss what you will learn during this tutorial.",
+        "active": true
+      },
+      {
+        "title": "HTML Structure",
+        "yt_link": "https://youtube.com/embed/ItYSvmpsf70",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Head",
+        "yt_link": "https://youtube.com/embed/juT8__x-UV4",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Body",
+        "yt_link": "https://youtube.com/embed/TCqc9-LKuxM",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Introducing CSS",
+        "yt_link": "https://youtube.com/embed/9euazf4V23k",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Classes & IDs",
+        "yt_link": "https://youtube.com/embed/sB0ZHWlgwIc",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Div Containers",
+        "yt_link": "https://youtube.com/embed/7g9NvuWX_e0",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Padding & Margin",
+        "yt_link": "https://youtube.com/embed/ApOuizbqc2Y",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "CSS Display Property",
+        "yt_link": "https://youtube.com/embed/NdmZmQBLlmo",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Positioning Elements",
+        "yt_link": "https://youtube.com/embed/hyuiw_tmU4U",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "HTML Table",
+        "yt_link": "https://youtube.com/embed/5e8IBbFnNFA",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "HTML Forms",
+        "yt_link": "https://youtube.com/embed/4g6kPH6hDqg",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Useful HTML Elements",
+        "yt_link": "https://youtube.com/embed/AWffdB4OPmE",
+        "description": "",
+        "active": false
+      },
+      {
+        "title": "Other CSS Properties",
+        "yt_link": "https://youtube.com/embed/MfMwuN9qmpg",
+        "description": "",
+        "active": false
+      }
+    ]
+  }
+]
