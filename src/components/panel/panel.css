@@ -1,46 +1,7 @@
 @import "../../utils/colours.css";
 
 .panel-common {
-  display: flex;
-  flex-direction: column;
   padding: 20px;
   box-shadow: 3px 3px 10px var(--grey);
-  border-radius: "4px";
-  background-repeat: no-repeat !important;
-  background-size: 100% !important;
-  max-width: 550px !important;
-  transition:
-    box-shadow 0.2s,
-    transform 0.2s;
-}
-
-.featured-course {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  height: 300px;
-}
-
-.featured-course h4 {
-  margin-bottom: 0;
-  color: var(--grey);
-}
-
-.featured-course:hover {
-  box-shadow: 5px 6px 12px var(--darkGrey);
-  transform: scale(1.05);
-}
-
-.row-3 {
-  max-width: 30%;
-  margin: 15px 2.5%;
-}
-
-.row-3:first-child, .row-3:nth-child(4n) {
-  margin-left: 0;
-}
-
-.row-3:nth-child(3n) {
-  margin-right: 0;
+  border-radius: 4px;
 }

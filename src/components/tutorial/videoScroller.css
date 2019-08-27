@@ -11,3 +11,9 @@
   font-family: sans-serif;
   padding: 5px;
 }
+
+@media only screen and (max-width: 450px) {
+  .video-scroller-list-item {
+    font-size: 18px;
+  }
+}

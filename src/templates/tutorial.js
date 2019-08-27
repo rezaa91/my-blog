@@ -15,7 +15,7 @@ const Tutorial = ({ data }) => {
       <section className="tutorial-container">
         <div className="tutorial-left-container">
           <div className="video-player-container">
-            <iframe title="video" width="1280" height="720" src={`${videoPlaying.yt_link}?autoplay=1`}></iframe>
+            <iframe className="video-player" title="video" src={`${videoPlaying.yt_link}?autoplay=1`}></iframe>
           </div>
           <h1 className="video-title">{videoPlaying.title}</h1>
           <h3 className="video-description">{videoPlaying.description}</h3>

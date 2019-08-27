@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "gatsby";
 import { map } from "lodash";
 
+import "./styles/index.css";
+import code from "../images/code.jpeg"
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button/button";
 import RegisterForm from "../components/form/registerForm";
-import Panel from "../components/panel/panel";
-import { grey, tiffany } from "../utils/colours";
-import code from "../images/code.jpeg"
 
 const featuredCourses = [
   {
@@ -21,47 +20,25 @@ const featuredCourses = [
 const IndexPage = () => {
   const renderFeaturedCourses = () => (
     map(featuredCourses, (course, index) => (
-      <Panel
+      <Link
         key={index}
-        background={`url(${course.image})`}
-        classNames="featured-course row-3"
+        to={course.path}
+        className="featured-course"
       >
-        <Link
-          style={{
-            width: "100%",
-            height: "100%",
-          }}
-          to={course.path} />
-      </Panel>
+        <img src={course.image} />
+      </Link>
     ))
   )
 
   return (
     <Layout>
       <SEO title="Home" />
-      <header
-        style={{
-          height: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
+      <header className="index-header">
         <div>
-          <h1
-            style={{
-              color: tiffany,
-              padding: '20px'
-            }}
-          >
+          <h1>
             web development. the parts they don't teach you.
           </h1>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
+          <div className="index-action-buttons">
             <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link>
             <Link to="/blog/"><Button primary={true} className="big">Blog</Button></Link>
           </div>
@@ -90,18 +67,8 @@ const IndexPage = () => {
         <RegisterForm />
       </section> */}
 
-      <section
-        style={{
-          padding: "40px 20px",
-          background: grey,
-        }}
-      >
-        <div
-          style={{
-            width: "40%",
-            margin: "auto",
-          }}
-        >
+      <section className="index-about-section">
+        <div className="index-about-content">
           <p className="sub-header">self taught web developer.</p>
           <p className="big-text">I create blogs and courses tailored around web develpoment. Predominantly using JavaScript and PHP.</p>
           <p>
@@ -111,18 +78,9 @@ const IndexPage = () => {
         </div>
       </section>
 
-      <section
-        style={{
-          padding: "40px 20px",
-        }}
-      >
+      <section className="index-featured-section">
         <h2>featured courses</h2>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="index-featured-container">
           {renderFeaturedCourses()}
         </div>
       </section>
