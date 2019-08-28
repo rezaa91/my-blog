@@ -8,6 +8,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button/button";
 import RegisterForm from "../components/form/registerForm";
+import { bounceIn, fadeInUp } from "../utils/animations";
 
 const featuredCourses = [
   {
@@ -35,10 +36,10 @@ const IndexPage = () => {
       <SEO title="Home" />
       <header className="index-header">
         <div>
-          <h1>
+          <h1 style={bounceIn}>
             web development. the parts they don't teach you.
           </h1>
-          <div className="index-action-buttons">
+          <div className="index-action-buttons" style={fadeInUp}>
             <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link>
             <Link to="/blog/"><Button primary={true} className="big">Blog</Button></Link>
           </div>
