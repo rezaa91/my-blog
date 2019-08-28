@@ -4,10 +4,11 @@ import Img from "gatsby-image";
 import { Link } from "gatsby";
 
 import "./tutorialPanel.css";
+import { bounceIn } from "../../utils/animations";
 
 const TutorialPanel = ({ title, path, description, fluid }) => {
   return(
-    <Link to={path} className="tutorial-panel-container">
+    <Link to={path} className="tutorial-panel-container" style={bounceIn}>
       <div className="tutorial-panel-image">
         <Img fluid={fluid} />
       </div>

@@ -3,12 +3,13 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import "./nav.css";
+import { fadeIn } from "../../utils/animations";
 
 const Nav = ({ siteTitle, openLoginModal, hasScrolled }) => {
   return(
     <div className={hasScrolled ? "nav-scrolling nav-container" : "nav-container"}>
       <h2 className="nav-title">
-        <Link to="/" className="nav-title-link">
+        <Link to="/" className="nav-title-link" style={fadeIn}>
           #{siteTitle}
         </Link>
       </h2>

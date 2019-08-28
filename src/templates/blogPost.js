@@ -4,13 +4,14 @@ import Img from "gatsby-image";
 
 import "./blogPost.css";
 import Layout from "../components/layout";
+import { fadeInUp } from "../utils/animations";
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
 
   return (
     <Layout>
-      <section className="blog-post-container">
+      <section className="blog-post-container" style={fadeInUp}>
         <h1 className="blog-post-title">{post.frontmatter.title}</h1>
         <div className="blog-post-meta-data">
           <p>{post.frontmatter.date}</p>
