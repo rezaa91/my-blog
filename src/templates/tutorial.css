@@ -3,6 +3,7 @@
 .tutorial-container {
   padding: 100px 20px 20px;
   display: flex;
+  width: 100%;
 }
 
 .tutorial-left-container {
@@ -10,18 +11,20 @@
 }
 
 .tutorial-right-container {
-  flex: 2;
+  flex: 1;
   height: 740px; /* 720px height of video, plus 2x10px of video container */
-}
-
-.video-main-title {
-  color: var(--tiffany);
 }
 
 .video-player-container {
   background: var(--black);
   padding: 10px 0;
   border-radius: 10px;
+}
+
+.video-player {
+  height: 720px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .video-title {
@@ -31,4 +34,47 @@
 
 .video-description {
   color: var(--grey);
+}
+
+@media only screen and (max-width: 1440px) {
+  .tutorial-container {
+    flex-direction: column;
+  }
+
+  .tutorial-left-container {
+    border-bottom: 2px solid var(--grey);
+    margin-bottom: 40px;
+  }
+
+  .video-title {
+    font-size: 28px;
+  }
+
+  .video-description {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .tutorial-right-container {
+    height: 500px;
+  }
+
+  .video-player {
+    height: 480px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .tutorial-right-container {
+    height: 260px;
+  }
+
+  .video-player {
+    height: 240px;
+  }
+
+  .video-title {
+    font-size: 22px;
+  }
 }

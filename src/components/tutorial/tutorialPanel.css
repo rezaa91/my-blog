@@ -46,3 +46,27 @@
 .tutorial-panel-meta-data p {
   color: var(--darkGrey);
 }
+
+@media only screen and (max-width: 850px) {
+  .tutorial-panel-container {
+    width: 45%;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .tutorial-panel-container {
+    width: 100%;
+    margin-bottom: 40px;
+    height: auto;
+  }
+
+  .tutorial-panel-meta-data h3 {
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .tutorial-panel-meta-data p {
+    display: none;
+  }
+}

@@ -34,3 +34,23 @@
 .blog-post-content p:first-child {
   margin-top: 50px;
 }
+
+@media only screen and (max-width: 850px) {
+  .blog-post-container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .blog-post-container {
+    width: 100%;
+  }
+
+  .blog-post-title {
+    font-size: 28px;
+  }
+
+  .blog-post-content p {
+    font-size: 18px;
+  }
+}
