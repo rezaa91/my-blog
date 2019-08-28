@@ -8,8 +8,8 @@ import "./blogPanel.css";
 const BlogPanel = ({ title, summary, date, path, fluid }) => {
   return (
     <div className="blog-panel">
-      <Link to={path}>
-        <Img fluid={fluid} />
+      <Link className="blog-panel-image-container" to={path}>
+        <Img className="blog-panel-image" fluid={fluid} />
       </Link>
 
       <div className="blog-info">
