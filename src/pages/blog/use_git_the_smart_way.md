@@ -10,7 +10,7 @@ If you are a developer, the chances are you have come across git at some point o
 Most likely it is a common tool which you use often, but are you using it wisely? Any Joe Bloggs
 can pick up the basics of git in a few hours and start using it straight away. However,
 resources are sparse when it comes to using git efficiently. Once you have learnt the commands
-and find out what they do, that’s it, you are on your own! But how should you be using git? When
+and found out what they do, that’s it, you are on your own! But how should you be using git? When
 should you commit? How should you structure your branches? What should you do when something
 goes wrong? This post serves to answer some of these questions.
 
@@ -25,7 +25,7 @@ of this setting to the UI. As these changes are related, you can commit these to
 
 What you should avoid is committing groups of unrelated changes. For example, fixing a bug and
 adding a default setting in the same commit. A commit message for a commit such as this might
-be “fixed bug and added theme setting”. If your commit messages contain the word “and”, review
+be: “fixed bug and added theme setting”. If your commit messages contain the word “and”, review
 what you are committing!
 
 So why should you avoid committing groups of unrelated changes? Using the example above, what if
@@ -57,20 +57,21 @@ repository and all my work lost! Since then, I always commit my work, whether it
 generally with a commit message like “blah blah WIP” (where WIP stands for work in progress), and I
 push the change remotely.
 You can imagine when I am working on large bit of code, my commit messages read like “work in progress”,
-“still working on it”, “WIP” – this completely violates the point I made above. So how do I resolve this?
-I squash my commits when the implementation I am working on is ready to be reviewed/merged. This
-basically means condensing your changes over multiple commits in to one commit. I then amend the commit
-message to follow the points made above. Simple.
+“still working on it”, “WIP” – this completely violates the point I made above about taking your time
+with commit messages. So how do I resolve this? I squash my commits when the implementation I am
+working on is ready to be reviewed/merged. This basically means condensing your changes over multiple
+commits in to one commit. I then amend the main commit message to follow the guidelines made above in
+point 2.Simple.
 
 ### Delete your branches
-Once you are finished with your branch, delete it! There are few things in life worse than going to checkout
-a branch you can’t remember the name of, to then view your current branches and being presented with a list
-longer than Apples terms and conditions.
+I will keep this point short. Once you are finished with your branch, delete it! There are few things in
+life worse than going to checkout a branch you can’t remember the name of, to then view your current
+branches and being presented with a list longer than Apples terms and conditions.
 
 ### Pull often
 You should be pulling changes often, especially if you work in a team. Using git pull allows you download
 content from a remote repository, which therefore allows you to obtain the changes your team have been working
 on. Generally speaking, you should pull changes first thing in the morning, before you push, before you rebase,
 and anytime you think about it really. Bear in mind that pulling changes on a branch that someone else is also
-working on may cause a conflict, in this instance is much safer to use git fetch. Although this shouldn’t
+working on may cause a conflict, in this instance it is much safer to use git fetch. Although this shouldn’t
 really happen if you have a good git structure.

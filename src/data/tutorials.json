@@ -2,7 +2,7 @@
   {
     "title": "HTML & CSS: The Complete Guide",
     "link": "/courses/html-and-css-the-complete-guide",
-    "description": "Build the foundations needed to become a web developer. In this course we will go through HTML and CSS from start to finish",
+    "description": "Build the foundations needed to become a web developer. In this course we will go through HTML and CSS from start to finish.",
     "image": "./tutorial-images/code.jpeg",
     "videos": [
       {
@@ -14,79 +14,79 @@
       {
         "title": "HTML Structure",
         "yt_link": "https://youtube.com/embed/ItYSvmpsf70",
-        "description": "",
+        "description": "Learn how to set up your HTML files.",
         "active": false
       },
       {
         "title": "Head",
         "yt_link": "https://youtube.com/embed/juT8__x-UV4",
-        "description": "",
+        "description": "Learn about the <head> tag, what it's used for, and what goes there.",
         "active": false
       },
       {
         "title": "Body",
         "yt_link": "https://youtube.com/embed/TCqc9-LKuxM",
-        "description": "",
+        "description": "In this video we go through the <body> tag and what it is used for.",
         "active": false
       },
       {
         "title": "Introducing CSS",
         "yt_link": "https://youtube.com/embed/9euazf4V23k",
-        "description": "",
+        "description": "Learn the basics of styling your HTML pages.",
         "active": false
       },
       {
         "title": "Classes & IDs",
         "yt_link": "https://youtube.com/embed/sB0ZHWlgwIc",
-        "description": "",
+        "description": "Give your HTML elements identifiers by using classes & IDs. These elements can then be identified easily by CSS and JavaScript.",
         "active": false
       },
       {
         "title": "Div Containers",
         "yt_link": "https://youtube.com/embed/7g9NvuWX_e0",
-        "description": "",
+        "description": "This video elabourates on <div> tags and how useful they are when creating your HTML pages.",
         "active": false
       },
       {
         "title": "Padding & Margin",
         "yt_link": "https://youtube.com/embed/ApOuizbqc2Y",
-        "description": "",
+        "description": "Back to CSS, this video outlines the differences between padding and margin, and how to use them.",
         "active": false
       },
       {
         "title": "CSS Display Property",
         "yt_link": "https://youtube.com/embed/NdmZmQBLlmo",
-        "description": "",
+        "description": "Learn about the different display property values in CSS.",
         "active": false
       },
       {
         "title": "Positioning Elements",
         "yt_link": "https://youtube.com/embed/hyuiw_tmU4U",
-        "description": "",
+        "description": "Learn about the different positioning property values in CSS, the difference between them and when to use them.",
         "active": false
       },
       {
         "title": "HTML Table",
         "yt_link": "https://youtube.com/embed/5e8IBbFnNFA",
-        "description": "",
+        "description": "Create a table in HTML.",
         "active": false
       },
       {
         "title": "HTML Forms",
         "yt_link": "https://youtube.com/embed/4g6kPH6hDqg",
-        "description": "",
+        "description": "Create a basic form in HTML, utilising different input elements.",
         "active": false
       },
       {
         "title": "Useful HTML Elements",
         "yt_link": "https://youtube.com/embed/AWffdB4OPmE",
-        "description": "",
+        "description": "Other useful HTML elements we have not touched on so far during this course are discussed here.",
         "active": false
       },
       {
         "title": "Other CSS Properties",
         "yt_link": "https://youtube.com/embed/MfMwuN9qmpg",
-        "description": "",
+        "description": "There are so many more properties to discuss when it comes to CSS. This video goes through a few more properties that we did not cover during this series.",
         "active": false
       }
     ]
