@@ -18,6 +18,11 @@ button {
 
 button:hover {
   box-shadow: 2px 2px 5px var(--grey);
+  background: var(--white-hover);
+}
+
+button:active {
+  background: var(--white-active);
 }
 
 .big {
@@ -29,6 +34,14 @@ button:hover {
   font-weight: 600;
   background: var(--primaryBlue);
   color: var(--white);
+}
+
+.primary:hover {
+  background: var(--primary-hover);
+}
+
+.primary:active {
+  background: var(--primary-active);
 }
 
 .big:hover {
