@@ -8,13 +8,15 @@
 }
 
 .index-header h1 {
+  font-size: 60px;
   color: var(--tiffany);
-  padding: 20px;
   font-weight: 200;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .index-action-buttons {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -27,6 +29,12 @@
 .index-about-content {
   width: 40%;
   margin: auto;
+}
+
+.social-media-icon img {
+  width: 40px;
+  margin-left: 25px;
+  color: var(--tiffany);
 }
 
 .index-featured-section {
@@ -68,8 +76,9 @@
 
 @media only screen and (max-width: 850px) {
   .index-header h1 {
-    width: 90%;
-    margin: 40px auto;
+    width: 100%;
+    margin: 20px auto;
+    font-size: 44px;
   }
 
   .index-about-section {
@@ -80,8 +89,8 @@
   }
 
   .index-about-content {
-    width: 60%;
-    margin: 0;
+    width: 100%;
+    text-align: center;
   }
 
   .featured-course {
@@ -96,17 +105,15 @@
   .featured-course:nth-child(3n) {
     margin: 20px auto;
   }
+
+  .follow-me {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   .index-header h1 {
-    width: 90%;
     font-size: 32px;
-  }
-
-  .index-about-content {
-    width: 100%;
-    text-align: center;
   }
 
   .index-action-buttons {
