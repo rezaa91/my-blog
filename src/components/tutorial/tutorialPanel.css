@@ -50,7 +50,12 @@
 @media only screen and (max-width: 850px) {
   .tutorial-panel-container {
     width: 45%;
+    height: auto;
     margin: auto;
+  }
+
+  .tutorial-panel-meta-data {
+    display: none;
   }
 }
 
@@ -64,9 +69,5 @@
   .tutorial-panel-meta-data h3 {
     text-align: center;
     font-size: 22px;
-  }
-
-  .tutorial-panel-meta-data p {
-    display: none;
   }
 }
