@@ -23,7 +23,7 @@
 
 .index-about-section {
   padding: 40px 20px;
-  background: var(--grey);
+  background: var(--tiffany);  
 }
 
 .index-about-content {
@@ -85,7 +85,6 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    background: var(--tiffany);
   }
 
   .index-about-content {

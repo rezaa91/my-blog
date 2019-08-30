@@ -14,7 +14,6 @@
 
 .blog-panel-image-container {
   flex: 1;
-  overflow-y: hidden;
 }
 
 .blog-info {
@@ -34,6 +33,7 @@
   color: var(--tiffany);
   font-weight: 100;
   margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
 .blog-title:hover {
@@ -61,7 +61,7 @@
 
 @media only screen and (max-width: 850px) {
   .blog-panel {
-    width: 100%;
+    width: 50%;
     margin: auto;
     border-bottom: 2px solid var(--grey);
     max-height: 400px;
@@ -75,12 +75,16 @@
     font-size: 18px;
   }
 
-  .meta-data {
+  .blog-summary-container {
     display: none;
   }
 }
 
 @media only screen and (max-width: 450px) {
+  .blog-panel {
+    width: 100%;
+  }
+
   .blog-title {
     text-align: center;
   }
