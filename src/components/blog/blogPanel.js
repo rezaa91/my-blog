@@ -15,11 +15,13 @@ const BlogPanel = ({ title, summary, date, path, fluid }) => {
 
       <div className="blog-info">
         <Link to={path}><h2 className="blog-title">{title}</h2></Link>
-        <p className="blog-summary">{summary}</p>
+        <div className="blog-summary-container">
+          <p className="blog-summary">{summary}</p>
 
-        <div className="blog-footer">
-          <div className="meta-data">
-            <p className="small">{date}</p>
+          <div className="blog-footer">
+            <div className="meta-data">
+              <p className="small">{date}</p>
+            </div>
           </div>
         </div>
       </div>

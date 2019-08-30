@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { map } from "lodash";
 
 import "./styles/index.css";
-import code from "../images/code.jpeg"
+import htmlImg from "../data/tutorial-images/html_css_complete_guide.jpg";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button/button";
@@ -17,7 +17,7 @@ import youtube from "../images/svg/youtube.svg";
 const featuredCourses = [
   {
     title: "HTML & CSS: The Complete Guide",
-    image: code,
+    image: htmlImg,
     path: "/courses/html-and-css-the-complete-guide",
   }
 ]
@@ -78,14 +78,14 @@ const IndexPage = () => {
           <p className="big-text">I create blogs and courses tailored around web develpoment.</p>
           <p>
             <span className="follow-me">Follow me:</span>
-            <a href="https://twitter.com/_rezaa91" className="social-media-icon" alt="twitter" target="_blank">
-              <img src={twitter} />
+            <a href="https://twitter.com/_rezaa91" className="social-media-icon" target="_blank" rel="noopener noreferrer">
+              <img src={twitter} alt="twitter" />
             </a>
-            <a href="https://www.instagram.com/_rezaa91/" className="social-media-icon" alt="instagram" target="_blank">
-              <img src={instagram} />
+            <a href="https://www.instagram.com/_rezaa91/" className="social-media-icon" target="_blank" rel="noopener noreferrer">
+              <img src={instagram} alt="instagram" />
             </a>
-            <a href="https://www.youtube.com/channel/UCGPpiPgghR8uiaIIJuvKZtg" className="social-media-icon" alt="youtube" target="_blank">
-              <img src={youtube} />
+            <a href="https://www.youtube.com/channel/UCGPpiPgghR8uiaIIJuvKZtg" className="social-media-icon" target="_blank" rel="noopener noreferrer">
+              <img src={youtube} alt="youtube" />
             </a>
           </p>
         </div>
