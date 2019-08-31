@@ -1,37 +1,37 @@
 import { animations } from "react-animation";
 
 export const bounceIn = {
-  animation: animations.bounceIn,
+  animation: animations && animations.bounceIn,
 }
 
 export const bounceOut = {
-  animation: animations.bounceOut,
+  animation: animations && animations.bounceOut,
 }
 
 export const fadeIn = {
-  animation: animations.fadeIn,
+  animation: animations && animations.fadeIn,
 }
 
 export const fadeOut = {
-  animation: animations.fadeOut,
+  animation: animations && animations.fadeOut,
 }
 
 export const fadeInUp = {
-  animation: animations.fadeInUp,
+  animation: animations && animations.fadeInUp,
 }
 
 export const popIn = {
-  animation: animations.popIn,
+  animation: animations && animations.popIn,
 }
 
 export const popOut = {
-  animation: animations.popOut,
+  animation: animations && animations.popOut,
 }
 
 export const slideIn = {
-  animation: animations.slideIn,
+  animation: animations && animations.slideIn,
 }
 
 export const slideOut = {
-  animation: animations.slideOut
+  animation: animations && animations.slideOut
 }
