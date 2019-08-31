@@ -5,6 +5,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url('../../images/index-img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .index-header h1 {
