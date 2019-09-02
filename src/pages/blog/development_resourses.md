@@ -3,7 +3,7 @@ path: "/blog/best-web-development-learning-resources"
 date: "Sep 19"
 title: "The best resources for becoming a web developer"
 summary: "This blog outlines the best resources you should be utilising in order to become a better developer."
-image: "../../images/blogImages/blog-git.jpg"
+image: "../../images/blogImages/blog-resources.jpg"
 ---
 
 I have been learning web development for 2 years and 7 months as of the creation of this post, and
