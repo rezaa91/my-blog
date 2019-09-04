@@ -1,16 +1,22 @@
 import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import "./form.css";
+import { getUser } from "../../actions/userAction";
 import Button from "../button/button";
 
-const LoginForm = ( { loginIsOpen, closeModal } ) => {
+const LoginForm = ( { loginIsOpen, closeModal, getUser } ) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
+
+    getUser({email, password});
+
+    closeModal();
   }
 
   return(
@@ -42,6 +48,7 @@ const LoginForm = ( { loginIsOpen, closeModal } ) => {
 LoginForm.propTypes = {
   loginIsOpen: PropTypes.bool.isRequired,
   closeModal: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
 }
 
-export default LoginForm;
+export default connect(null, { getUser })(LoginForm);
