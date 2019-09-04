@@ -7,7 +7,7 @@ export function storeToken(token) {
     return;
   }
 
-  localStorage.token = token;
+  localStorage[TOKEN] = token;
 }
 
 export function removeToken() {

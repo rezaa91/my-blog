@@ -13,10 +13,10 @@ export default function(state = initialState, action) {
         user: action.payload,
       };
     case REMOVE_USER:
-        return {
-          ...state,
-          user: action.payload,
-        }
+      return {
+        ...state,
+        user: action.payload,
+      };
     default:
       return state;
   }
