@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 import "./panel.css";
-import {white} from "../../utils/colours";
+import { white } from "../../utils/colours";
 
 const Panel = ({ children, width, background, classNames }) => {
   return(
