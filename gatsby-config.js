@@ -4,6 +4,10 @@ module.exports = {
     description: `Stay up to date in the ever-changing world of web development with free courses and blogs!`,
     author: `Ali Issaee`,
   },
+  proxy: {
+    prefix: `/api`,
+    url: `http://localhost:3000`,
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,

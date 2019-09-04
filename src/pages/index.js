@@ -49,7 +49,7 @@ const IndexPage = () => {
         </div>
       </header>
 
-      {/* <section
+      <section
         style={{
           display: "flex",
           width: "100%",
@@ -64,12 +64,12 @@ const IndexPage = () => {
           <h2>get access to free content when you register</h2>
           <div style={{
             display: "flex",
-          }}> */}
+          }}>
             {/* display 3 images here */}
-          {/* </div>
+          </div>
         </div>
         <RegisterForm />
-      </section> */}
+      </section>
 
       <section className="index-about-section">
         <div className="index-about-content">
