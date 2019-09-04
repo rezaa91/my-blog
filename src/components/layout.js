@@ -1,7 +1,9 @@
 import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { Provider } from "react-redux";
 
+import store from "../store";
 import Nav from "./nav/nav";
 import LoginForm from "./form/loginForm";
 import "./layout.css"
@@ -44,7 +46,7 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <>
+    <Provider store={store}>
       <Nav siteTitle={data.site.siteMetadata.title} openLoginModal={openLoginModal} hasScrolled={scroll} />
       <LoginForm loginIsOpen={loginIsOpen} closeModal={closeLoginModal} />
       <div>
@@ -64,7 +66,7 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()} {data.site.siteMetadata.title}. All rights reserved.
         </footer>
       </div>
-    </>
+    </Provider>
   )
 }
 

@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import { connect } from "react-redux";
 
 import "./nav.css";
+import { removeUser } from "../../actions/userAction";
 import { fadeIn } from "../../utils/animations";
 
-const Nav = ({ siteTitle, openLoginModal, hasScrolled }) => {
+const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser }) => {
   return(
     <div className={hasScrolled ? "nav-scrolling nav-container" : "nav-container"}>
       <h2 className="nav-title">
@@ -20,14 +22,26 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled }) => {
       </div>
 
       <div className="nav-right">
-        {/* <div onClick={openLoginModal} className="login-link">login</div> */}
+        {
+          user.email ?
+            <div onClick={removeUser} className="login-link">Logout</div> :
+            <div onClick={openLoginModal} className="login-link">login</div>
+        }
       </div>
     </div>
   );
 }
 
 Nav.propTypes = {
-  siteTitle: PropTypes.string.isRequired
+  siteTitle: PropTypes.string.isRequired,
+  openLoginModal: PropTypes.func.isRequired,
+  hasScrolled: PropTypes.bool.isRequired,
+  user: PropTypes.object.isRequired,
+  removeUser: PropTypes.func.isRequired,
 }
 
-export default Nav;
+const mapStateToProps = state => ({
+  user: state.user.user,
+})
+
+export default connect(mapStateToProps, { removeUser })(Nav);
