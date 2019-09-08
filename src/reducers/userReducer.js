@@ -1,13 +1,14 @@
-import { GET_USER, REGISTER_USER, REMOVE_USER } from "../actions/types";
+import { LOGIN_USER, GET_USER, REGISTER_USER, REMOVE_USER } from "../actions/types";
 
 const initialState = {
-  user: {}
+  user: {},
 };
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case GET_USER:
+    case LOGIN_USER:
     case REGISTER_USER:
+    case GET_USER:
       return {
         ...state,
         user: action.payload,

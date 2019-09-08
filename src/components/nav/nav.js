@@ -1,13 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 import { Link } from "gatsby";
 import { connect } from "react-redux";
 
 import "./nav.css";
-import { removeUser } from "../../actions/userAction";
+import { removeUser, getUser } from "../../actions/userAction";
 import { fadeIn } from "../../utils/animations";
 
-const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser }) => {
+let hasCalledGetUser = false;
+
+const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser }) => {
+  if (!hasCalledGetUser) {
+    getUser();
+
+    hasCalledGetUser = true;
+  }
+
+  const logoutAction = () => {
+    axios.post("/api/user/logout")
+      .then(removeUser);
+  }
+
   return(
     <div className={hasScrolled ? "nav-scrolling nav-container" : "nav-container"}>
       <h2 className="nav-title">
@@ -24,7 +38,7 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser }) => {
       <div className="nav-right">
         {
           user.email ?
-            <div onClick={removeUser} className="login-link">Logout</div> :
+            <div onClick={logoutAction} className="login-link">Logout</div> :
             <div onClick={openLoginModal} className="login-link">login</div>
         }
       </div>
@@ -38,10 +52,11 @@ Nav.propTypes = {
   hasScrolled: PropTypes.bool.isRequired,
   user: PropTypes.object.isRequired,
   removeUser: PropTypes.func.isRequired,
+  getUser: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
   user: state.user.user,
 })
 
-export default connect(mapStateToProps, { removeUser })(Nav);
+export default connect(mapStateToProps, { removeUser, getUser })(Nav);
