@@ -1,6 +1,3 @@
-const minPasswordLength = 6;
-const maxPasswordLength = 40;
-
 export function validateEmail(email) {
   const emailRegex = /\S+@\S+\.\S+/;
 
@@ -8,9 +5,6 @@ export function validateEmail(email) {
 }
 
 export function validatePassword(password) {
-  if (password.length < minPasswordLength || password.length > maxPasswordLength) {
-    return false;
-  }
-
-  return true;
+  // checks for minimum 6 characters, at least 1 uppercase, 1 lowercase, 1 special char
+  return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/.test(password);
 }

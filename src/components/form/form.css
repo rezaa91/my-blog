@@ -10,8 +10,15 @@ input[type="text"], input[type="password"] {
   padding: 5px;
   font-size: 22px;
   border-radius: 4px;
+  width: 100%;
 }
 
 .newsletter-confirm-container {
   margin-bottom: 25px;
+}
+
+.validation-error {
+  color: var(--white);
+  height: 30px;
+  margin-bottom: 5px;
 }

@@ -49,6 +49,7 @@ button:active {
 }
 
 .register-button {
+  width: 100%;
   font-weight: 600;
   background: var(--tiffany);
   padding: 10px 0;
