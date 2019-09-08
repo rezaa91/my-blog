@@ -13,7 +13,6 @@ import twitter from "../images/svg/twitter.svg";
 import instagram from "../images/svg/instagram.svg";
 import youtube from "../images/svg/youtube.svg";
 
-
 const featuredCourses = [
   {
     title: "HTML & CSS: The Complete Guide",

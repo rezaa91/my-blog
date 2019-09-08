@@ -1,16 +1,18 @@
 import axios from "axios";
-import { GET_USER, REGISTER_USER, REMOVE_USER } from "./types";
-import { storeToken, removeToken } from "../utils/auth";
+import { LOGIN_USER, GET_USER, REGISTER_USER, REMOVE_USER } from "./types";
 
-export function getUser(params) {
+export function loginUser(params) {
   return function(dispatch) {
-    axios.post("/api/auth", params)
+    axios.post("/api/auth", params, {
+      credentials: 'same-origin',
+      headers: {
+        'CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+      }
+    })
       .then(res => res.data)
       .then(user => {
-        storeToken(user.token);
-
         dispatch({
-          type: GET_USER,
+          type: LOGIN_USER,
           payload: user.user,
         })
       })
@@ -20,11 +22,14 @@ export function getUser(params) {
 
 export function registerUser(params) {
   return function(dispatch) {
-    axios.post("/api/users", params)
+    axios.post("/api/user", params, {
+      credentials: 'same-origin',
+      headers: {
+        'CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+      }
+    })
       .then(res => res.data)
       .then(user => {
-        storeToken(user.token);
-
         dispatch({
           type: REGISTER_USER,
           payload: user.user,
@@ -36,11 +41,26 @@ export function registerUser(params) {
 
 export function removeUser() {
   return function(dispatch) {
-    removeToken();
-
     dispatch({
       type: REMOVE_USER,
       payload: {},
     })
+  }
+}
+
+export function getUser() {
+  return function(dispatch) {
+    axios.get("/api/user", {
+      headers: {
+        'CSRF-Token': document.querySelector('meta[name="csrf-token"]').content,
+      }
+    })
+      .then(res => res.data)
+      .then(user => {
+        dispatch({
+          type: GET_USER,
+          payload: user,
+        })
+      })
   }
 }
