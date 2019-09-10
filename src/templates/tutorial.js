@@ -2,7 +2,6 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import "./tutorial.css"
-import Layout from "../components/layout";
 import VideoScroller from "../components/tutorial/videoScroller";
 import { fadeInUp, slideIn } from "../utils/animations";
 
@@ -12,28 +11,26 @@ const Tutorial = ({ data }) => {
   const [videoPlaying, setVideoPlaying] = React.useState(tutorial.videos[0]);
 
   return(
-    <Layout>
-      <section className="tutorial-container">
-        <div className="tutorial-left-container">
-          <div className="video-player-container" style={slideIn}>
-            <iframe
-              className="video-player"
-              title={videoPlaying.title}
-              src={`${videoPlaying.yt_link}?autoplay=1`}
-              allow="accelerometer; autoplay; gyroscope"
-              frameBorder="0"
-              allowFullScreen
-            />
-          </div>
-          <h1 className="video-title">{videoPlaying.title}</h1>
-          <h3 className="video-description">{videoPlaying.description}</h3>
+    <section className="tutorial-container">
+      <div className="tutorial-left-container">
+        <div className="video-player-container" style={slideIn}>
+          <iframe
+            className="video-player"
+            title={videoPlaying.title}
+            src={`${videoPlaying.yt_link}?autoplay=1`}
+            allow="accelerometer; autoplay; gyroscope"
+            frameBorder="0"
+            allowFullScreen
+          />
         </div>
+        <h1 className="video-title">{videoPlaying.title}</h1>
+        <h3 className="video-description">{videoPlaying.description}</h3>
+      </div>
 
-        <div className="tutorial-right-container" style={fadeInUp}>
-          <VideoScroller videos={tutorial.videos} selectVideo={setVideoPlaying} />
-        </div>
-      </section>
-    </Layout>
+      <div className="tutorial-right-container" style={fadeInUp}>
+        <VideoScroller videos={tutorial.videos} selectVideo={setVideoPlaying} />
+      </div>
+    </section>
   );
 }
 

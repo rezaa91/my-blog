@@ -2,7 +2,6 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { map } from "lodash";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TutorialPanel from "../components/tutorial/tutorialPanel";
 
@@ -42,7 +41,7 @@ const Courses = () => {
   )
 
   return(
-    <Layout>
+    <>
       <SEO title="courses" />
       <section
         style={{
@@ -53,7 +52,7 @@ const Courses = () => {
       >
         {renderTutorials()}
       </section>
-    </Layout>
+    </>
   );
 }
 
