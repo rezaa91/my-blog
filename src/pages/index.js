@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import { map } from "lodash";
 
 import "./styles/index.css";
-import htmlImg from "../data/tutorial-images/html_css_complete_guide.jpg";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button/button";
@@ -12,14 +11,7 @@ import { bounceIn, fadeInUp } from "../utils/animations";
 import twitter from "../images/svg/twitter.svg";
 import instagram from "../images/svg/instagram.svg";
 import youtube from "../images/svg/youtube.svg";
-
-const featuredCourses = [
-  {
-    title: "HTML & CSS: The Complete Guide",
-    image: htmlImg,
-    path: "/courses/html-and-css-the-complete-guide",
-  }
-]
+import { featuredCourses } from "../data/featuredCourses";
 
 const IndexPage = () => {
   const renderFeaturedCourses = () => (
