@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { map } from "lodash";
+import { connect } from "react-redux";
 
 import "./styles/index.css";
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Button from "../components/button/button";
 import RegisterForm from "../components/form/registerForm";
@@ -13,7 +14,7 @@ import instagram from "../images/svg/instagram.svg";
 import youtube from "../images/svg/youtube.svg";
 import { featuredCourses } from "../data/featuredCourses";
 
-const IndexPage = () => {
+const IndexPage = ({ isLoggedIn }) => {
   const renderFeaturedCourses = () => (
     map(featuredCourses, (course, index) => (
       <Link
@@ -27,7 +28,7 @@ const IndexPage = () => {
   )
 
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
       <header className="index-header">
         <div>
@@ -40,27 +41,32 @@ const IndexPage = () => {
         </div>
       </header>
 
-      <section
-        style={{
-          display: "flex",
-          width: "100%",
-          padding: "40px 20px",
-        }}
-      >
-        <div
+      {
+        // only display register form for users who are not logged in
+        !isLoggedIn &&
+
+        <section
           style={{
-            flex: 1,
+            display: "flex",
+            width: "100%",
+            padding: "40px 20px",
           }}
         >
-          <h2>get access to free content when you register</h2>
-          <div style={{
-            display: "flex",
-          }}>
-            {/* display 3 images here */}
+          <div
+            style={{
+              flex: 1,
+            }}
+          >
+            <h2>get access to free content when you register</h2>
+            <div style={{
+              display: "flex",
+            }}>
+              {/* display 3 images here */}
+            </div>
           </div>
-        </div>
-        <RegisterForm />
-      </section>
+          <RegisterForm />
+        </section>
+      }
 
       <section className="index-about-section">
         <div className="index-about-content">
@@ -88,8 +94,20 @@ const IndexPage = () => {
           {renderFeaturedCourses()}
         </div>
       </section>
-    </Layout>
+    </>
   );
 }
 
-export default IndexPage
+IndexPage.defaultProps = {
+  isLoggedIn: false,
+}
+
+IndexPage.propTypes = {
+  isLoggedIn: PropTypes.bool,
+}
+
+const mapStateToProps = state => ({
+  isLoggedIn: Boolean(state.user && state.user.user && state.user.user.email),
+})
+
+export default connect(mapStateToProps)(IndexPage);
