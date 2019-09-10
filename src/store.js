@@ -7,7 +7,7 @@ const initialState = {};
 
 const middleware = [thunk];
 
-let composeEnhancers = compose; 
+let composeEnhancers = compose;
 
 if (typeof window !== 'undefined') {
   composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

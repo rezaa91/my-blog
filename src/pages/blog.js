@@ -2,7 +2,6 @@ import React from "react";
 import { map } from "lodash";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
 import BlogPanel from "../components/blog/blogPanel";
 
@@ -46,7 +45,7 @@ const Blog = () => {
   )
 
   return(
-    <Layout>
+    <>
       <SEO title="blog" />
         <section
           style={{
@@ -56,7 +55,7 @@ const Blog = () => {
         >
           {renderBlogPosts()}
         </section>
-    </Layout>
+    </>
   );
 }
 

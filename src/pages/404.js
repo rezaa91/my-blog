@@ -3,11 +3,10 @@ import { Link } from "gatsby"
 
 import { grey, tiffany, white } from "../utils/colours";
 import Button from "../components/button/button";
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = () => (
-  <Layout>
+  <>
     <SEO title="404: Not found" />
     <section
       style={{
@@ -23,7 +22,7 @@ const NotFoundPage = () => (
         <Link to="/" style={{color: white}}>back home</Link>
       </Button>
     </section>
-  </Layout>
+  </>
 )
 
 export default NotFoundPage
