@@ -1,4 +1,8 @@
-import { animations } from "react-animation";
+let animations = {};
+
+if (typeof window !== 'undefined') {
+  animations = require('react-animation').animations;
+}
 
 export const bounceIn = {
   animation: animations && animations.bounceIn,
