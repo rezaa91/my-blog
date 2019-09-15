@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { map } from "lodash";
 import { connect } from "react-redux";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
