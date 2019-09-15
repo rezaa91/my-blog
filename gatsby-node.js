@@ -45,16 +45,3 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     })
   })
 }
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: /react-animation/,
-          use: loaders.null(),
-        },
-      ],
-    },
-  })
-}

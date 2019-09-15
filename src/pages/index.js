@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
 import { map } from "lodash";
 import { connect } from "react-redux";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import "./styles/index.css";
 import SEO from "../components/seo";
@@ -13,17 +13,20 @@ import twitter from "../images/svg/twitter.svg";
 import instagram from "../images/svg/instagram.svg";
 import youtube from "../images/svg/youtube.svg";
 import { featuredCourses } from "../data/featuredCourses";
+import { tiffany } from "../utils/colours";
 
 const IndexPage = ({ isLoggedIn }) => {
   const renderFeaturedCourses = () => (
     map(featuredCourses, (course, index) => (
-      <Link
+      <AniLink
+        paintDrip
+        hex={tiffany}
         key={index}
         to={course.path}
         className="featured-course"
       >
         <img src={course.image} alt={course.title} />
-      </Link>
+      </AniLink>
     ))
   )
 
@@ -35,8 +38,8 @@ const IndexPage = ({ isLoggedIn }) => {
           <h1 style={bounceIn}>Get Busy Coding</h1>
           <h1 style={bounceIn}>Or Get Busy Learning</h1>
           <div className="index-action-buttons" style={fadeInUp}>
-            <Link to="/courses/"><Button primary={true} className="big primary">Courses</Button></Link>
-            <Link to="/blog/"><Button primary={true} className="big">Blog</Button></Link>
+            <AniLink swipe to="/courses/"><Button primary={true} className="big primary">Courses</Button></AniLink>
+            <AniLink swipe to="/blog/"><Button primary={true} className="big">Blog</Button></AniLink>
           </div>
         </div>
       </header>
