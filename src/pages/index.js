@@ -48,23 +48,21 @@ const IndexPage = ({ isLoggedIn }) => {
         // only display register form for users who are not logged in
         !isLoggedIn &&
 
-        <section
-          style={{
-            display: "flex",
-            width: "100%",
-            padding: "40px 20px",
-          }}
-        >
+        <section className="register-section">
           <div
             style={{
               flex: 1,
             }}
           >
-            <h2>get access to free content when you register</h2>
+            <h2>why join?</h2>
             <div style={{
               display: "flex",
             }}>
-              {/* display 3 images here */}
+              <div className="register-info">
+                <div className="register-bullet"><span>1</span>current, clean &amp; concise tutorials</div>
+                <div className="register-bullet"><span>2</span>real world examples</div>
+                <div className="register-bullet"><span>3</span>access to free content</div>
+              </div>
             </div>
           </div>
           <RegisterForm />
@@ -73,7 +71,7 @@ const IndexPage = ({ isLoggedIn }) => {
 
       <section className="index-about-section">
         <div className="index-about-content">
-          <h2>Hi, My Name Is...</h2>
+          <h2>hi, my name is...</h2>
           <p className="sub-header"><strong>Ali Issaee</strong>,</p>
           <p className="big-text">I create blogs and courses tailored around web develpoment.</p>
           <p>

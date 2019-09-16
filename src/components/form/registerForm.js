@@ -41,7 +41,7 @@ const RegisterForm = ({ registerUser }) => {
   }
 
   return(
-    <Panel width="40%" background={primaryBlue}>
+    <Panel width="40%" background={primaryBlue} classNames="register-panel">
       <h3 className="form-title">Register</h3>
       <input type="text" value={email} placeholder="alias@host.com" onChange={(e) => setEmail(e.target.value)} onKeyUp={checkEmail} />
       <p className="validation-error">{emailValidation}</p>
