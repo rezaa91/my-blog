@@ -6,7 +6,7 @@ export function loginUser(params) {
     axios.post("/api/auth", params, {
       credentials: 'same-origin',
       headers: {
-        'CSRF-Token': typeof document !== 'undefined' ?
+        'CSRF-Token': typeof document !== 'undefined' && document.querySelector('meta[name="csrf-token"]') ?
           document.querySelector('meta[name="csrf-token"]').content :
           null,
       }
@@ -27,7 +27,7 @@ export function registerUser(params) {
     axios.post("/api/user", params, {
       credentials: 'same-origin',
       headers: {
-        'CSRF-Token': typeof document !== 'undefined' ?
+        'CSRF-Token': typeof document !== 'undefined' && document.querySelector('meta[name="csrf-token"]') ?
           document.querySelector('meta[name="csrf-token"]').content :
           null,
       }
@@ -56,7 +56,7 @@ export function getUser() {
   return function(dispatch) {
     axios.get("/api/user", {
       headers: {
-        'CSRF-Token': typeof document !== 'undefined' ?
+        'CSRF-Token': typeof document !== 'undefined' && document.querySelector('meta[name="csrf-token"]') ?
           document.querySelector('meta[name="csrf-token"]').content :
           null,
       }
