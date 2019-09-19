@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `devign`,
+    title: `Jr.Dev`,
     description: `Stay up to date in the ever-changing world of web development with free courses and blogs!`,
     author: `Ali Issaee`,
   },
