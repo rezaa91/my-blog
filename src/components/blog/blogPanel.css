@@ -4,16 +4,12 @@
 .blog-panel {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 25%;
-  margin: 15px 50px;
+  justify-content: space-between;
+  width: 30%;
+  margin: 15px 2.5%;
   transition: box-shadow 0.2s;
   background-color: var(--white);
   max-height: 800px;
-}
-
-.blog-panel-image-container {
-  flex: 1;
 }
 
 .blog-info {
@@ -61,14 +57,14 @@
 
 @media only screen and (max-width: 850px) {
   .blog-panel {
-    width: 50%;
+    width: 45%;
     margin: auto;
     border-bottom: 2px solid var(--grey);
     max-height: 400px;
   }
 
   .blog-title {
-    font-size: 22px;
+    font-size: 20px;
   }
 
   .blog-summary {
@@ -87,6 +83,7 @@
 
   .blog-title {
     text-align: center;
+    font-size: 18px;
   }
 
   .blog-summary {

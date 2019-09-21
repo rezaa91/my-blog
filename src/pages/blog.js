@@ -51,6 +51,7 @@ const Blog = () => {
           style={{
             display: "flex",
             padding: "100px 20px 20px",
+            flexWrap: "wrap",
           }}
         >
           {renderBlogPosts()}
