@@ -22,6 +22,18 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser
       .then(removeUser);
   }
 
+  const linkClasses = (pageTitle) => {
+    const defaultClasses = ['link'];
+
+    const regex = new RegExp(pageTitle);
+
+    if (window && regex.test(window.location.href)) {
+      defaultClasses.push('active-link');
+    }
+
+    return defaultClasses.join(' ');
+  }
+
   return(
     <div className={hasScrolled ? "nav-scrolling nav-container" : "nav-container"}>
       <h2 className="nav-title">
@@ -31,8 +43,8 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser
       </h2>
 
       <div>
-        <Link to="/blog/" className="link">blog</Link>
-        <Link to="/courses/" className="link">courses</Link>
+        <Link to="/blog/" className={linkClasses('blog')}>blog</Link>
+        <Link to="/courses/" className={linkClasses('courses')}>courses</Link>
       </div>
 
       <div className="nav-right">

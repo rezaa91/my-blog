@@ -58,6 +58,8 @@
   margin: 0 10px;
   color: var(--grey);
   transition: color 0.2s;
+  transition: 
+    border-bottom 0.2s;
 }
 
 .link:hover {
@@ -98,6 +100,11 @@
   padding: 10px 20px;
   outline: var(--grey);
   box-shadow: 3px 5px 3px var(--grey);
+}
+
+.active-link {
+  color: var(--black);
+  border-bottom: 3.5px solid var(--tiffany);
 }
 
 @media only screen and (max-width: 850px) {
