@@ -3,22 +3,31 @@ import { LOGIN_USER, GET_USER, REGISTER_USER, REMOVE_USER } from "./types";
 
 export function loginUser(params) {
   return function(dispatch) {
-    axios.post("/api/auth", params, {
-      credentials: 'same-origin',
-      headers: {
-        'CSRF-Token': typeof document !== 'undefined' && document.querySelector('meta[name="csrf-token"]') ?
-          document.querySelector('meta[name="csrf-token"]').content :
-          null,
-      }
-    })
-      .then(res => res.data)
-      .then(user => {
-        dispatch({
-          type: LOGIN_USER,
-          payload: user.user,
-        })
+    return new Promise((resolve, reject) => {
+      axios.post("/api/auth", params, {
+        credentials: 'same-origin',
+        headers: {
+          'CSRF-Token': typeof document !== 'undefined' && document.querySelector('meta[name="csrf-token"]') ?
+            document.querySelector('meta[name="csrf-token"]').content :
+            null,
+        }
       })
-      .catch(err => console.log(err));
+        .then(res => res.data)
+        .then(user => {
+          dispatch({
+            type: LOGIN_USER,
+            payload: user.user,
+          })
+
+          resolve(true);
+        })
+        .catch(err => {
+          console.log(err);
+          reject(false);
+        });
+    })
+
+    
   }
 }
 
