@@ -7,16 +7,17 @@ import "./form.css";
 import { loginUser } from "../../actions/userAction";
 import Button from "../button/button";
 
-const LoginForm = ( { loginIsOpen, closeModal, loginUser } ) => {
+const LoginForm = ({ loginIsOpen, closeModal, loginUser }) => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [validationMessage, setValidationMessage] = React.useState('');
 
-  const submitForm = async (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
 
-    loginUser({email, password});
-
-    closeModal();
+    loginUser({email, password})
+      .then(() => closeModal())
+      .catch(() => setValidationMessage('Incorrect login details, please try again.'));
   }
 
   return(
@@ -37,8 +38,9 @@ const LoginForm = ( { loginIsOpen, closeModal, loginUser } ) => {
           flexDirection: "column",
         }}
       >
-        <input autoFocus type="text" value={email} placeholder="alias@host.com" onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" value={password} placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+        <input required autoFocus type="email" value={email} placeholder="alias@host.com" onChange={(e) => setEmail(e.target.value)} />
+        <input required type="password" value={password} placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+        <div className="login-validation-error">{validationMessage}</div>
         <Button onSubmit={(e) => submitForm(e)} className="login-button">login</Button>
       </form>
     </Modal>
