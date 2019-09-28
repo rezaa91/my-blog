@@ -26,8 +26,11 @@ button:active {
 }
 
 .big {
-  margin: 0 10px;
   padding: 10px 20px;
+}
+
+.spacing {
+  margin: 0 10px;
 }
 
 .primary {

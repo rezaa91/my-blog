@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import axios from "axios";
 import { Link } from "gatsby";
 import { connect } from "react-redux";
+import { FaUserAlt } from "react-icons/fa";
 
 import "./nav.css";
 import { removeUser, getUser } from "../../actions/userAction";
@@ -11,15 +12,35 @@ import { fadeIn } from "../../utils/animations";
 let hasCalledGetUser = false;
 
 const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser }) => {
+  const [showDropdown, setShowDropdown] = React.useState(false);
+
   if (!hasCalledGetUser) {
     getUser();
 
     hasCalledGetUser = true;
   }
 
+  React.useEffect(() => {
+    document.addEventListener("mousedown", hideDropdown);
+
+    return () => {
+      document.removeEventListener("mousedown", hideDropdown);
+    }
+  }, []);
+
+  const hideDropdown = (e) => {
+    if (!e.target.classList.contains("dropdown")) {
+      setShowDropdown(false);
+    }
+  }
+
   const logoutAction = () => {
     axios.post("/api/user/logout")
-      .then(removeUser);
+      .then(() => {
+        removeUser();
+
+        setShowDropdown(false);
+      });
   }
 
   const linkClasses = (pageTitle) => {
@@ -32,6 +53,24 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser
     }
 
     return defaultClasses.join(' ');
+  }
+
+  const displayDropdown = () => {
+    if (!showDropdown) {
+      return;
+    }
+
+    return (
+      <div className="dropdown dropdown-list">
+        <div className="main-user-links">
+          <Link className="dropdown dropdown-link" onClick={() => setShowDropdown(false)} to="/account/">Account</Link>
+        </div>
+
+        <div className="logout-container">
+          <div className="dropdown logout" onClick={logoutAction}>Logout</div>
+        </div>
+      </div>
+    );
   }
 
   return(
@@ -50,9 +89,11 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser
       <div className="nav-right">
         {
           user.email ?
-            <div onClick={logoutAction} className="login-link">Logout</div> :
+            <div onClick={() => setShowDropdown(true)} className="login-link"><FaUserAlt /></div> :
             <div onClick={openLoginModal} className="login-link">login</div>
         }
+
+        {displayDropdown()}
       </div>
     </div>
   );
