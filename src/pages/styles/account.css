@@ -1,0 +1,13 @@
+.account-container {
+  padding: 100px 20px 20px;
+}
+
+.account-validation {
+  padding: 10px 0;
+  min-height: 50px;
+}
+
+section div .account-input {
+  width: 40%;
+  margin-bottom: 10px;
+}

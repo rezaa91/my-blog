@@ -38,8 +38,8 @@ const IndexPage = ({ isLoggedIn }) => {
           <h1 style={bounceIn}>Get Busy Coding</h1>
           <h1 style={bounceIn}>Or Get Busy Learning</h1>
           <div className="index-action-buttons" style={fadeInUp}>
-            <AniLink swipe to="/courses/"><Button primary={true} className="big primary">Courses</Button></AniLink>
-            <AniLink swipe to="/blog/"><Button primary={true} className="big">Blog</Button></AniLink>
+            <AniLink swipe to="/courses/"><Button primary={true} className="big primary spacing">Courses</Button></AniLink>
+            <AniLink swipe to="/blog/"><Button primary={true} className="big spacing">Blog</Button></AniLink>
           </div>
         </div>
       </header>

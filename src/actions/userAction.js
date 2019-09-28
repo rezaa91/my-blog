@@ -26,8 +26,6 @@ export function loginUser(params) {
           reject(false);
         });
     })
-
-    
   }
 }
 

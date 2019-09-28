@@ -58,7 +58,7 @@
   margin: 0 10px;
   color: var(--grey);
   transition: color 0.2s;
-  transition: 
+  transition:
     border-bottom 0.2s;
 }
 
@@ -69,6 +69,7 @@
 .login-link {
   cursor: pointer;
   transition: color 0.2s;
+  margin-right: 10px;
 }
 
 .login-link:hover {
@@ -105,6 +106,44 @@
 .active-link {
   color: var(--black);
   border-bottom: 3.5px solid var(--tiffany);
+}
+
+.dropdown-list {
+  position: absolute;
+  background: var(--white);
+  color: var(--darkGrey);
+  padding: 20px;
+  right: 0;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0.5px 1px 3px var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  width: 200px;
+  align-items: flex-end;
+}
+
+.logout-container {
+  border-top: 1.5px solid var(--grey);
+  padding-top: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+.dropdown-link {
+  color: var(--grey);
+  transition:
+    color 0.2s;
+}
+
+.dropdown-link:hover {
+  color: var(--black);
 }
 
 @media only screen and (max-width: 850px) {
