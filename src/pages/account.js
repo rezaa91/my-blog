@@ -9,26 +9,33 @@ import SEO from "../components/seo";
 
 import "./styles/account.css";
 import Button from "../components/button/button";
-import {updatePassword} from "../services/updatePassword";
+import {updatePassword, updateSubscription} from "../services/updateUserDetails";
+import {validatePassword} from "../utils/validators";
 
-const Account = ({ user }) => {
-  // redirect to home page if user not logged in
-  if (isEmpty(user)) {
-    navigate('/');
-  }
-
+const UpdateUserDetails = ({ user }) => {
   const [currentPassword, setCurrentPassword] = React.useState('');
   const [newPassword, setNewPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [validationError, setValidationError] = React.useState('');
+  const [subscribeNewsletter, setSubscribeNewsletter] = React.useState(user.subscribe);
 
   const changePassword = async () => {
     if (!currentPassword || !newPassword || !confirmPassword) {
       setValidationError('Please fill in all the fields.');
+
+      return;
     }
 
     if (newPassword !== confirmPassword) {
       setValidationError('New password and password confirmation do not match.');
+
+      return;
+    }
+
+    if (!validatePassword(newPassword)) {
+      setValidationError('Password must contain at least; 6 characters, 1 uppercase, 1 lowercase and 1 special character');
+
+      return;
     }
 
     const response = await updatePassword({
@@ -51,6 +58,86 @@ const Account = ({ user }) => {
     setValidationError(errorMessage);
   }
 
+  const toggleNewsletterSubscription = async () => {
+    const response = await updateSubscription({
+      userId: user.id || user._id,
+      subscribe: !subscribeNewsletter,
+    });
+
+    if (response.status === 200) {
+      setSubscribeNewsletter(!subscribeNewsletter);
+    }
+  }
+
+  return (
+    <div>
+      <div className="change-details-container account-section">
+        <h3>My Details</h3>
+        <input className="account-input account-email" type="text" readOnly value={user.email} />
+
+        <div>
+          <span className="account-subscribe-container" onClick={toggleNewsletterSubscription}>
+            Subscribe to newsletter: &nbsp;
+            <input
+              type="checkbox"
+              checked={subscribeNewsletter}
+              value={subscribeNewsletter}
+              readOnly
+            />
+          </span>
+        </div>
+      </div>
+
+      <div className="update-password-container account-section">
+        <h3>Change Password</h3>
+        <div>
+          <input
+            type="password"
+            placeholder="current password"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            className="account-input"
+          />
+        </div>
+
+        <div>
+          <input
+            type="password"
+            placeholder="new password"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            className="account-input"
+          />
+        </div>
+
+        <div>
+          <input
+            type="password"
+            placeholder="confirm new password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="account-input"
+          />
+        </div>
+
+        <div className="account-validation">{validationError}</div>
+
+        <Button className="primary big" action={changePassword}>update</Button>
+      </div>
+    </div>
+  );
+};
+
+UpdateUserDetails.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+const Account = ({ user }) => {
+  // redirect to home page if user not logged in
+  if (isEmpty(user)) {
+    navigate('/');
+  }
+
   return(
     <>
       <SEO title="account" />
@@ -63,44 +150,7 @@ const Account = ({ user }) => {
           </TabList>
 
           <TabPanel>
-            <div>
-              <div className="update-password-container">
-                <h3>Change Password</h3>
-                <div>
-                  <input
-                    type="password"
-                    placeholder="current password"
-                    value={currentPassword}
-                    onChange={(e) => setCurrentPassword(e.target.value)}
-                    className="account-input"
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="password"
-                    placeholder="new password"
-                    value={newPassword}
-                    onChange={(e) => setNewPassword(e.target.value)}
-                    className="account-input"
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="password"
-                    placeholder="confirm new password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="account-input"
-                  />
-                </div>
-
-                <div className="account-validation">{validationError}</div>
-
-                <Button className="primary big" action={changePassword}>update</Button>
-              </div>
-            </div>
+            <UpdateUserDetails user={user} />
           </TabPanel>
           <TabPanel>
             <div>You currently do not have any <Link to="/courses/">courses</Link>.</div> {/* placeholder as paid courses do not yet exist */}

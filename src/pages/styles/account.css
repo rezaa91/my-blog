@@ -1,3 +1,5 @@
+@import "../../utils/colours.css";
+
 .account-container {
   padding: 100px 20px 20px;
 }
@@ -10,4 +12,19 @@
 section div .account-input {
   width: 40%;
   margin-bottom: 10px;
+}
+
+.account-email {
+  background: var(--darkGrey);
+  color: var(--white);
+}
+
+.account-section {
+  padding: 25px 0;
+  border-bottom: 2px solid var(--grey);
+}
+
+.account-subscribe-container {
+  display: inline-block;
+  cursor: pointer;
 }
