@@ -37,7 +37,7 @@ const RegisterForm = ({ registerUser }) => {
       return;
     }
 
-    registerUser({email, password, subscribe});
+    registerUser({email: email.toLowerCase(), password, subscribe});
   }
 
   return(

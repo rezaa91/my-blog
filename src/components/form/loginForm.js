@@ -15,7 +15,7 @@ const LoginForm = ({ loginIsOpen, closeModal, loginUser }) => {
   const submitForm = (e) => {
     e.preventDefault();
 
-    loginUser({email, password})
+    loginUser({email: email.toLowerCase(), password})
       .then(() => closeModal())
       .catch(() => setValidationMessage('Incorrect login details, please try again.'));
   }
