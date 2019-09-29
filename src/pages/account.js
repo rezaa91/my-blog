@@ -134,7 +134,7 @@ UpdateUserDetails.propTypes = {
 
 const Account = ({ user }) => {
   // redirect to home page if user not logged in
-  if (isEmpty(user)) {
+  if (isEmpty(user) && typeof window !== 'undefined') {
     navigate('/');
   }
 

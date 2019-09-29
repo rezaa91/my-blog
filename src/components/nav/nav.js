@@ -48,7 +48,7 @@ const Nav = ({ siteTitle, openLoginModal, hasScrolled, user, removeUser, getUser
 
     const regex = new RegExp(pageTitle);
 
-    if (window && regex.test(window.location.href)) {
+    if (typeof window !== 'undefined' && regex.test(window.location.href)) {
       defaultClasses.push('active-link');
     }
 
