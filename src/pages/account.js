@@ -11,8 +11,9 @@ import "./styles/account.css";
 import Button from "../components/button/button";
 import {updatePassword, updateSubscription} from "../services/updateUserDetails";
 import {validatePassword} from "../utils/validators";
+import {getUser} from "../actions/userAction";
 
-const UpdateUserDetails = ({ user }) => {
+const UpdateUserDetails = ({ user, getUser }) => {
   const [currentPassword, setCurrentPassword] = React.useState('');
   const [newPassword, setNewPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
@@ -66,6 +67,9 @@ const UpdateUserDetails = ({ user }) => {
 
     if (response.status === 200) {
       setSubscribeNewsletter(!subscribeNewsletter);
+
+      // in order to update redux store, we call get user again to get most up to date data
+      getUser();
     }
   }
 
@@ -132,7 +136,7 @@ UpdateUserDetails.propTypes = {
   user: PropTypes.object.isRequired,
 };
 
-const Account = ({ user }) => {
+const Account = ({ user, getUser }) => {
   // redirect to home page if user not logged in
   if (isEmpty(user) && typeof window !== 'undefined') {
     navigate('/');
@@ -150,7 +154,7 @@ const Account = ({ user }) => {
           </TabList>
 
           <TabPanel>
-            <UpdateUserDetails user={user} />
+            <UpdateUserDetails user={user} getUser={getUser} />
           </TabPanel>
           <TabPanel>
             <div>You currently do not have any <Link to="/courses/">courses</Link>.</div> {/* placeholder as paid courses do not yet exist */}
@@ -169,4 +173,4 @@ const mapStateToProps = state => ({
   user: state.user.user,
 });
 
-export default connect(mapStateToProps)(Account);
+export default connect(mapStateToProps, {getUser})(Account);
