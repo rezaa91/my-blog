@@ -9,85 +9,99 @@
         "title": "Getting Started",
         "yt_link": "https://youtube.com/embed/5sUIdLyklv0",
         "description": "In this video we learn what HTML and CSS is and we discuss what you will learn during this tutorial.",
-        "active": true
+        "active": true,
+        "link": "/courses/html-and-css-the-complete-guide/getting-started-01"
       },
       {
         "title": "HTML Structure",
         "yt_link": "https://youtube.com/embed/ItYSvmpsf70",
         "description": "Learn how to set up your HTML files.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/html-structure-02"
       },
       {
         "title": "Head",
         "yt_link": "https://youtube.com/embed/juT8__x-UV4",
         "description": "Learn about the <head> tag, what it's used for, and what goes there.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/head-03"
       },
       {
         "title": "Body",
         "yt_link": "https://youtube.com/embed/TCqc9-LKuxM",
         "description": "In this video we go through the <body> tag and what it is used for.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/body-04"
       },
       {
         "title": "Introducing CSS",
         "yt_link": "https://youtube.com/embed/9euazf4V23k",
         "description": "Learn the basics of styling your HTML pages.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/css-05"
       },
       {
         "title": "Classes & IDs",
         "yt_link": "https://youtube.com/embed/sB0ZHWlgwIc",
         "description": "Give your HTML elements identifiers by using classes & IDs. These elements can then be identified easily by CSS and JavaScript.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/classes-and-ids-06"
       },
       {
         "title": "Div Containers",
         "yt_link": "https://youtube.com/embed/7g9NvuWX_e0",
         "description": "This video elabourates on <div> tags and how useful they are when creating your HTML pages.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/div-containers-07"
       },
       {
         "title": "Padding & Margin",
         "yt_link": "https://youtube.com/embed/ApOuizbqc2Y",
         "description": "Back to CSS, this video outlines the differences between padding and margin, and how to use them.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/padding-and-margin-08"
       },
       {
         "title": "CSS Display Property",
         "yt_link": "https://youtube.com/embed/NdmZmQBLlmo",
         "description": "Learn about the different display property values in CSS.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/css-display-09"
       },
       {
         "title": "Positioning Elements",
         "yt_link": "https://youtube.com/embed/hyuiw_tmU4U",
         "description": "Learn about the different positioning property values in CSS, the difference between them and when to use them.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/positioning-10"
       },
       {
         "title": "HTML Table",
         "yt_link": "https://youtube.com/embed/5e8IBbFnNFA",
         "description": "Create a table in HTML.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/html-table-11"
       },
       {
         "title": "HTML Forms",
         "yt_link": "https://youtube.com/embed/4g6kPH6hDqg",
         "description": "Create a basic form in HTML, utilising different input elements.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/html-forms-12"
       },
       {
         "title": "Useful HTML Elements",
         "yt_link": "https://youtube.com/embed/AWffdB4OPmE",
         "description": "Other useful HTML elements we have not touched on so far during this course are discussed here.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/html-useful-elements-13"
       },
       {
         "title": "Other CSS Properties",
         "yt_link": "https://youtube.com/embed/MfMwuN9qmpg",
         "description": "There are so many more properties to discuss when it comes to CSS. This video goes through a few more properties that we did not cover during this series.",
-        "active": false
+        "active": false,
+        "link": "/courses/html-and-css-the-complete-guide/css-properties-14"
       }
     ]
   }
