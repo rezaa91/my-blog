@@ -115,6 +115,7 @@
 
   .register-section {
     flex-direction: column;
+    padding: 40px 0;
   }
 
   .register-info {

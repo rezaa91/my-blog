@@ -18,7 +18,7 @@ const UpdateUserDetails = ({ user, getUser }) => {
   const [newPassword, setNewPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [validationError, setValidationError] = React.useState('');
-  const [subscribeNewsletter, setSubscribeNewsletter] = React.useState(user.subscribe);
+  const [subscribeNewsletter, setSubscribeNewsletter] = React.useState(user.subscribe ? user.subscribe : false);
 
   const changePassword = async () => {
     if (!currentPassword || !newPassword || !confirmPassword) {
@@ -77,7 +77,7 @@ const UpdateUserDetails = ({ user, getUser }) => {
     <div>
       <div className="change-details-container account-section">
         <h3>My Details</h3>
-        <input className="account-input account-email" type="text" readOnly value={user.email} />
+        <input className="account-input account-email" type="text" readOnly value={user.email ? user.email : ''} />
 
         <div>
           <span className="account-subscribe-container" onClick={toggleNewsletterSubscription}>
